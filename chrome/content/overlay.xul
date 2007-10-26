@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<!--
+  Copyright 2007 by Massimiliano Mirra
+  
+  This file is part of xmppdev.
+  
+  xmppdev is free software; you can redistribute it and/or modify it
+  under the terms of the GNU General Public License as published by the
+  Free Software Foundation; either version 3 of the License, or (at your
+  option) any later version.
+  
+  xmppdev is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  
+  Author: Massimiliano Mirra, <bard [at] hyperstruct [dot] net>
+-->
+
+<!DOCTYPE overlay>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <!-- SCRIPTS -->
+
+  <script type="application/x-javascript;version=1.7" src="overlay.js"/>
+
+  <!-- COMMANDS -->
+
+  <commandset id="mainCommandSet">
+    <command id="xmppdev-command-open-console"
+             label="Console"
+             accesskey="C"
+             oncommand="window.open(
+                        'chrome://xmppdev/content/console.xul',
+                        'xmppdev-console', 'chrome');"/>
+  </commandset>
+  
+  <!-- KEYS -->
+
+  <keyset id="mainKeyset"/>
+
+  <!-- MENUS -->
+
+  <menupopup id="xmpp-menu-main">
+    <menuitem class="menuitem-iconic"
+              insertafter="xmpp-menu-applications-separator"
+              command="xmppdev-command-open-console"/>
+  </menupopup>
+
+  <!-- TOOLBAR -->
+ 
+  <toolbox id="navigator-toolbox"/>
+
+  <!-- STATUS BAR -->
+
+  <statusbar id="status-bar"/>
+
+  <!-- CONTENT AREA -->
+
+  <vbox id="appcontent"/>
+</overlay>

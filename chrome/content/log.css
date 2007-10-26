@@ -1,0 +1,53 @@
+@namespace console "http://dev.hyperstruct.net/xmpp4moz#console";
+
+stream {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+message *,
+presence *,
+iq * {
+    display: none;
+}
+
+console|dump[hidden="true"] {
+    display: none;
+}
+
+console|dump {
+    display: block;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 8px 8px 2px 12px;
+}
+
+console|dump console|serialized {
+    display: block;
+    white-space: -moz-pre-wrap;
+    font-family: monospace;
+    padding-bottom: 4px;
+}
+
+console|dump[direction="in"] {
+    background: #f2f2ff;
+}
+
+console|dump[direction="out"] {
+    background: #fff2f2;
+}
+
+console|dump console|account {
+    display: block;
+    text-align: right;
+    font-style: italic;
+    font-size: 85%;
+    color: #555;
+}
+
+console|dump[direction="out"] console|account:after {
+    content: " →"
+}
+
+console|dump[direction="in"] console|account:after {
+    content: " ←"
+}
