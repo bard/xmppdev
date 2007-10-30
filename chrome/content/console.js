@@ -183,7 +183,8 @@ function log(event) {
         <account>{event.account}</account>
         </dump>;
 
-    _('log').contentDocument.documentElement.appendChild(asDOM(stanza));
+    var logDoc = _('log').contentDocument;
+    logDoc.documentElement.appendChild(logDoc.adoptNode(asDOM(stanza), true));
 }
 
 function loadedLog(event) {
