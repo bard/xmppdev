@@ -184,7 +184,13 @@ function log(event) {
         </dump>;
 
     var logDoc = _('log').contentDocument;
-    logDoc.documentElement.appendChild(logDoc.adoptNode(asDOM(stanza), true));
+    var node;
+    try {
+        node = logDoc.adoptNode(asDOM(stanza), true)
+    } catch(e) {
+        node = logDoc.importNode(asDOM(stanza), true);
+    }
+    logDoc.documentElement.appendChild(node);
 }
 
 function loadedLog(event) {
