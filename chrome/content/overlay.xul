@@ -32,7 +32,7 @@
 
   <commandset id="mainCommandSet">
     <command id="xmppdev-command-open-console"
-             label="Console"
+             label="XMPP Console"
              accesskey="C"
              oncommand="window.open(
                         'chrome://xmppdev/content/console.xul',
@@ -45,9 +45,8 @@
 
   <!-- MENUS -->
 
-  <menupopup id="xmpp-menu-main">
+  <menupopup id="menu_ToolsPopup">
     <menuitem class="menuitem-iconic"
-              insertafter="xmpp-menu-applications-separator"
               command="xmppdev-command-open-console"/>
   </menupopup>
 
