@@ -148,7 +148,7 @@ function filterCache(textbox) {
 }
 
 function clearLog() {
-    var logEntries = _('log').contentDocument.getElementById('entries');
+    var logEntries = _('log').contentDocument.documentElement;
     while(logEntries.firstChild)
         logEntries.removeChild(logEntries.firstChild);
 }
