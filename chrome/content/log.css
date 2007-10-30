@@ -29,11 +29,11 @@ console|dump console|serialized {
 }
 
 console|dump[direction="in"] {
-    background: #f2f2ff;
+    background: #e8e8ff;
 }
 
 console|dump[direction="out"] {
-    background: #fff2f2;
+    background: #ffe8e8;
 }
 
 console|dump console|account {
