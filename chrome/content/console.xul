@@ -103,7 +103,7 @@
               </toolbar>
             </toolbox>
             
-            <iframe src="log.xml" id="log" flex="5" class="box-inset" onload="loadedLog(event);"/>
+            <iframe id="log" flex="5" class="box-inset"/>
   
             <splitter/>
 

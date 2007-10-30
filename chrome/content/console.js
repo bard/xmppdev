@@ -70,8 +70,14 @@ function init(event) {
 
     snippetTreeView.init(snippets);
     _('templates').view = snippetTreeView;
-
+    
     _('input').focus();
+
+    _('log').addEventListener('load', function(event) {
+        loadedLog(event);
+    }, true);
+    
+    _('log').contentDocument.location.href = 'log.xml';
 }
 
 function finish() {
