@@ -11,13 +11,13 @@ var snippets = [
         type: 'Contact Management',
         name: 'Add contact',
         data:
-            <presence to="[CONTACT_JID]" type="subscribe"/>
+            <presence to="" type="subscribe"/>
     },
     {
         type: 'Multi-User Chat',
         name: 'Join room',
         data:
-            <presence to="[ROOM_JID]">
+            <presence to="">
             <x xmlns="http://jabber.org/protocol/muc"/>
             </presence>
     },
@@ -26,7 +26,7 @@ var snippets = [
         type: 'Multi-User Chat',
         name: 'Retrieve room configuration',
         data:
-            <iq type="get" to="[ROOM_JID]">
+            <iq type="get" to="">
             <query xmlns="http://jabber.org/protocol/muc#owner"/>
             </iq>
     },
@@ -62,7 +62,7 @@ var snippets = [
         type: 'Discover information',
         name: 'Query entity about itself',
         data:
-            <iq type="get" to="[ENTITY_JID]">
+            <iq type="get" to="">
             <query xmlns="http://jabber.org/protocol/disco#info"/>
             </iq>,
     },
@@ -82,6 +82,24 @@ var snippets = [
         data:
             <iq type="get" to="">
             <query xmlns="jabber:iq:time"/>
+            </iq>
+    },
+
+    {
+        type: 'Discover information',
+        name: 'Retrieve vCard',
+        data:
+            <iq to='' type='get'>
+            <vCard xmlns='vcard-temp'/>
+            </iq>
+    },
+
+    {
+        type: 'Discover information',
+        name: 'Retrieve profile',
+        data:
+            <iq type='get' to=''>
+            <profile xmlns='http://jabber.org/protocol/profile'/>
             </iq>
     },
 
@@ -125,6 +143,44 @@ var snippets = [
             <iq type="set">
             <pubsub xmlns="http://jabber.org/protocol/pubsub#owner">
             <delete node="[NODE_NAME]"/>
+            </pubsub>
+            </iq>
+    },
+
+    {
+        type: 'Publish/Subscribe',
+        name: 'Publish profile info',
+        data:
+            <iq type='set'>
+            <profile xmlns='http://jabber.org/protocol/profile'>
+            <x xmlns='jabber:x:data' type='submit'>
+            <field var='FORM_TYPE' type='hidden'>
+            <value>http://jabber.org/protocol/profile</value>
+            </field>
+            <field var='nickname'>
+            <value>Hamlet</value>
+            </field>
+            <field var='country'>
+            <value>DK</value>
+            </field>
+            <field var='locality'>
+            <value>Elsinore</value>
+            </field>
+            <field var='email'>
+            <value>hamlet@denmark.lit</value>
+            </field>
+            </x>
+            </profile>
+            </iq>
+    },
+
+    {
+        type: 'Publish/Subscribe',
+        name: 'Subscribe to profile updates',
+        data:
+            <iq type='set' to=''>
+            <pubsub xmlns='http://jabber.org/protocol/pubsub'>
+            <subscribe node='http://jabber.org/protocol/profile' jid='[SENDER_BARE_JID]'/>
             </pubsub>
             </iq>
     }
