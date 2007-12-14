@@ -59,7 +59,25 @@ var snippets = [
     },
 
     {
-        type: 'Discover information',
+        type: 'Discover Information',
+        name: 'Get list of ad-hoc commands',
+        data:
+            <iq type="get" to="">
+            <query xmlns="http://jabber.org/protocol/disco#items" node="http://jabber.org/protocol/commands"/>
+            </iq>
+    },
+
+    {
+        type: 'Discover Information',
+        name: 'Get info about command',
+        data:
+            <iq type='get' to="">
+            <query xmlns='http://jabber.org/protocol/disco#info' node='[COMMAND_NODE]'/>
+            </iq>
+    },
+
+    {
+        type: 'Discover Information',
         name: 'Query entity about itself',
         data:
             <iq type="get" to="">
@@ -68,7 +86,7 @@ var snippets = [
     },
 
     {
-        type: 'Discover information',
+        type: 'Discover Information',
         name: 'Query entity about its items',
         data:
             <iq type="get" to="">
@@ -77,7 +95,7 @@ var snippets = [
     },
 
     {
-        type: 'Discover information',
+        type: 'Discover Information',
         name: 'Query entity about its time',
         data:
             <iq type="get" to="">
@@ -86,7 +104,7 @@ var snippets = [
     },
 
     {
-        type: 'Discover information',
+        type: 'Discover Information',
         name: 'Retrieve vCard',
         data:
             <iq to='' type='get'>
@@ -95,7 +113,7 @@ var snippets = [
     },
 
     {
-        type: 'Discover information',
+        type: 'Discover Information',
         name: 'Retrieve profile',
         data:
             <iq type='get' to=''>
@@ -104,7 +122,7 @@ var snippets = [
     },
 
     {
-        type: 'Account management',
+        type: 'Account Management',
         name: 'Change password',
         data:
             <iq type="set">
