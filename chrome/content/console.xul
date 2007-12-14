@@ -83,7 +83,7 @@
               <menubar>
                 <menu label="View" accesskey="V">
                   <menupopup>
-                    <menuitem label="Clear" accesskey="C" oncommand="clearLog();"/>
+                    <menuitem label="Clear" accesskey="C" oncommand="resetLog();"/>
                   </menupopup>
                 </menu>
                 

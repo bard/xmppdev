@@ -77,7 +77,7 @@ function init(event) {
         loadedLog(event);
     }, true);
     
-    _('log').contentDocument.location.href = 'log.xml';
+    resetLog();
 }
 
 function finish() {
@@ -147,11 +147,8 @@ function filterCache(textbox) {
     }
 }
 
-function clearLog() {
-    var doc = _('log').contentDocument;
-    doc.replaceChild(doc.documentElement.cloneNode(false),
-                     doc.documentElement);
-    doc.defaultView.scrollTo(0,0);
+function resetLog() {
+    _('log').contentDocument.location.href= 'log.xml';
 }
 
 function asDOM(object) {
