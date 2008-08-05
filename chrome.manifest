@@ -2,3 +2,4 @@ content xmppdev chrome/content/
 skin xmppdev classic/1.0 chrome/skin/classic/
 
 overlay chrome://browser/content/browser.xul chrome://xmppdev/content/overlay.xul
+overlay chrome://sameplace/content/scriptlets/scriptlet_manager.xul chrome://xmppdev/content/scriptlet_editor/overlay_scriptlet_manager.xul application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} appversion<3
